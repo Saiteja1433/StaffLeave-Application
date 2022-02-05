@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>ADMIN CONTROL PANEL</title>
+  <style>
+    html,
+    body {
+      align-items: center;
+      padding-block-end: 10px;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 20px;
+    }
+  </style>
+</head>
+
+<body class="text-center" ng-app="myApp" ng-controller="adminCntrl">
+  <h1>ADMIN CONTROL PANEL</h1>
+  <button class="btn btn-primary btn-lg" ng-click="registerFac()">Regster New Facility</button>
+  <button class="btn btn-primary btn-lg" style="margin-left:10rem" ng-click="showdetails()">Display Facility
+    Details</button>
+  <h3>
+    ---------------------------------------------------------------------------------------------------------------------
+  </h3>
+  <div class="text-center px-5 py-10" ng-show="requests">
+    <table class="table ">
+      <thead>
+        <tr>
+          <th scope="col">NAME</th>
+          <th scope="col">Staff I'd</th>
+          <th scope="col" style="width: 70px;">Reason for Leave</th>
+          <th scope="col">Eleigible Levaes</th>
+          <th scope="col">Number of days</th>
+          <th scope="col">GRANT / DENY</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="items in msg">
+          <span>
+            <section>
+              <td>{{items.staffname}}</td>
+              <td>{{items.staffid}}</td>
+              <td>{{items.reason}}</td>
+              <td>{{items.leavesleft}}</td>
+              <td>{{items.noofdays}}</td>
+              <td>
+                <a class="btn btn-primary btn-lg" ng-click="desicion(items,2)" role="button">GRANT</a>
+                <a class="btn btn-primary btn-lg" ng-click="desicion(items,0)" role="button">DENY</a>
+              </td>
+            </section>
+          </span>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+
+  <div class="container mb-3" style="align-items: center; padding-top: 40px;" ng-show="register">
+    <form>
+      <h1>REGISTER</h1>
+      <div class="mb-3" class="col-xs-4">
+        <label for="name" style="text-align: left;">Name</label>
+        <input type="text" class="form-control" id="names" ng-model="name" name="names" placeholder="Enter Your Name">
+      </div>
+      <div class="mb-3" class="col-xs-4">
+        <label for="sid" class="form-label">Staff ID </label>
+        <input type="sid" class="form-control" id="sid" ng-model="staffid" name="sid" placeholder="Enter Your Staff ID">
+      </div>
+      <div class="mb-3" class="col-xs-4">
+        <label for="phone" class="form-label">Phone </label>
+        <input type="phone" class="form-control" id="phone" ng-model="mobileno" name="phone"
+          placeholder="Enter Your Phone Number">
+      </div>
+
+      <div class="mb-3" class="col-xs-4">
+        <label for="password" class="form-label">Password </label>
+        <input type="password" class="form-control" id="password" name="passwords" ng-model="password"
+          placeholder="Enter Your Password">
+      </div>
+      <div ng-show="showerr">
+        <p style="color: red;">Staff ID is already exists <br> Please Change the Staff ID</p>
+      </div>
+      <button class="btn btn-primary" type="submit"
+        ng-click="registerfacility(name,staffid,password,mobileno)">REGISTER</button>
+      <button class="btn btn-danger" ng-click="cancel()">Cancel</button>
+    </form>
+  </div>
+  <div ng-show="facilitydetails">
+    <h2>Facility details</h2>
+    <table class="table ">
+      <thead>
+        <tr>
+          <th scope="col">NAME</th>
+          <th scope="col">Staff I'd</th>
+          <th scope="col" style="width: 70px;">Password</th>
+          <th scope="col">Mobile Number</th>
+          <th scope="col">Total Leaves</th>
+          <th scope="col">Leaves used</th>
+          <th scope="col">Leaves Remaining</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="items in facdetails">
+          <td>{{items.name}}</td>
+          <td>{{items.staffid}}</td>
+          <td>{{items.password}}</td>
+          <td>{{items.mobileno}}</td>
+          <td>{{items.leaves}}</td>
+          <td>{{items.leavesused}}</td>
+          <td>{{items.leavesremaining}}</td>
+          <td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="btn btn-danger" ng-click="cancel()">Close</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

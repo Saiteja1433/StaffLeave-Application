@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>USER PAGE</title>
+    <style>
+      .con{
+        margin:15px;
+        border: 2px solid #d9dbda;
+        /* box-shadow: inset 0px 0px 0px 10px #969696; */
+        box-sizing: border-box;
+        border-radius: 8px;
+        padding-left:10px ;
+        text-align: left;
+        padding-bottom: 30px;
+      }
+      .heading{
+        display: inline-block;
+        width: 70rem;
+      }
+      .req{
+        border: 2px solid #d9dbda;
+        border-radius: 8px;
+        margin: 10px;
+      }
+      .heading1{
+        margin-left: -6rem;
+        text-align: left;
+        display: inline-block;
+        width: 61rem;
+        font-weight: bold;
+      }
+    </style>
+    <script src= "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">
+    </script>
+</head>
+<body class="text-center" ng-app="myApp" ng-controller="myCtrl">
+    <section class="text-gray-900 ">
+  <div class="container px-5 py-10 mx-auto">
+    <div class="flex flex-col text-center w-full mb-20">
+      <h1  class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900" style="text-transform:capitalize;">Wellcome {{userinfo[0].name}}</h1>
+      <!-- <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies heirloom prism food truck ugh squid celiac humblebrag.</p> -->
+    </div>
+    <div class="flex flex-wrap -m-4 text-center">
+      <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+        <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock text-indigo-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 16 16">
+            <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/>
+          </svg>
+          <p class="title-font font-medium text-3xl text-gray-900">TOTAL LEAVES</p>
+          <h2 class="title-font font-medium text-3xl text-gray-900">{{userinfo[0].leaves}}</h2>
+        </div>
+      </div>
+      <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+        <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-check text-indigo-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 16 16">
+            <path d="M10.854 7.854a.5.5 0 0 0-.708-.708L7.5 9.793 6.354 8.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+            <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+          </svg>
+          <p class="title-font font-medium text-3xl text-gray-900">PREVIOUS LEAVES</p>
+          <h2 class="title-font font-medium text-3xl text-gray-900">{{userinfo[0].leavesused}}</h2>
+        </div>
+      </div>
+      <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+        <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-lock2 text-indigo-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 16 16">
+            <path d="M10 7v1.076c.54.166 1 .597 1 1.224v2.4c0 .816-.781 1.3-1.5 1.3h-3c-.719 0-1.5-.484-1.5-1.3V9.3c0-.627.46-1.058 1-1.224V7a2 2 0 1 1 4 0zM7 7v1h2V7a1 1 0 0 0-2 0z"/>
+            <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+          </svg>
+          <p class="title-font font-medium text-3xl text-gray-900">ELIGIBLE LEAVES </p>
+          <h2  class="title-font font-medium text-3xl text-gray-900">{{userinfo[0].leavesremaining}}</h2>
+        </div>
+      </div>
+      <!-- <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+        <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="text-indigo-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          <p class="title-font font-medium text-3xl text-gray-900">STATUS OF LEAVE</p>
+          <h2 class="title-font font-medium text-3xl text-gray-900">-GRANTED-</h2>
+        </div>
+      </div> -->
+      
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="text-gray-600 body-font">
+    <div  class="container mx-auto flex px-5 items-center justify-center flex-col" ng-app="myApp" ng-controller="myCtrl">
+        <div  ng-show="leavereq" class="p-9 w-full">
+            <div class="relative">
+              <label for="message" class="leading-7 text-sm text-gray-600">Kindly Write The Reason For Leave Application</label>
+              <br>
+              
+              <textarea id="message"  ng-model="msg" name="message" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+              <label>Please Select Number of days</label>
+              <select  ng-model="noofdays" style="border: 2px solid; border-radius: 5px;" class="leading-7 text-sm text-gray-600" >
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+              </select>
+            </div>
+           </div> 
+           <div ng-show="leavereq" class="text-center lg:w-2/3 w-full" href="page1.html" >
+           <div class="flex justify-center">
+          <button type="submit" ng-click="insertMsg(msg,userinfo,noofdays)" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">APPLY FOR LEAVE</button> 
+        </div> 
+      </div>
+      <div ng-show="pending">
+        <r1> Your Request is PENDING </r1>  <br>
+        <r3> You can Apply for New Leave when your current request is Accepted or Rejected </r3>
+      </div>
+    </div>
+  </section>
+  <br>
+  <h1 style="font-weight: bold; text-align: left; margin-left:15px;">Your Previous Leaves</h1>
+  <section class="req">
+    <h2 class="heading1">Reason</h2>
+    <h2 style="display: inline-block; width: 18rem; font-weight: bold;">No.of Days</h2>
+    <span style="font-weight:bold">Status</span>
+    <div class="con" ng-repeat="items in userreq">
+      <h2 class="heading">{{items.reason}}</h2>
+      <h2 style="display: inline-block; width: 10rem;">{{items.noofdays}}</h2>
+      <span >{{items.status}}</span>
+    </div>
+    <br>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</body>
+</html>
